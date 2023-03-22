@@ -3,7 +3,7 @@
   <div class="logs">
     <ul>
       <li v-for="(log, index) in logs.get()" :key="index">
-        {{ log }}
+        <span v-html="$replaceIcons(log)"></span>
       </li>
     </ul>
   </div>
@@ -12,6 +12,7 @@
 <script setup>
 import { useLogs } from '../composables/useLogs'
 const logs = useLogs()
+
 </script>
   
 <style scoped>

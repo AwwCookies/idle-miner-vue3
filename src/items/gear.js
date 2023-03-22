@@ -12,76 +12,76 @@
  */
 export const gear = {
     "Copper Helmet": {
-        "name": "Copper Helmet",
-        "chance": 10,
-        "value": 10,
-        "icon": "/imgs/gear/copper_helmet.png",
-        "description": "A simple copper helmet. It's not very protective, but it'll keep your head warm.",
-        "type": "helmet",
-        "stats": {},
-        "durability": 10
+      "name": "Copper Helmet",
+      "chance": 10,
+      "value": 10,
+      "icon": "gear:copper_helmet",
+      "description": "A simple copper helmet. It's not very protective, but it'll keep your head warm.",
+      "type": "helmet",
+      "stats": {},
+      "durability": 10
     },
     "Copper Chestplate": {
-        "name": "Copper Chestplate",
-        "chance": 10,
-        "value": 10,
-        "icon": "/imgs/gear/copper_chestplate.png",
-        "description": "A simple copper chestplate. It's not very protective, but it'll keep your chest warm.",
-        "type": "chestplate",
-        "stats": {},
-        "durability": 10
+      "name": "Copper Chestplate",
+      "chance": 10,
+      "value": 10,
+      "icon": "gear:copper_chestplate",
+      "description": "A simple copper chestplate. It's not very protective, but it'll keep your chest warm.",
+      "type": "chestplate",
+      "stats": {},
+      "durability": 10
     },
     "Copper Leggings": {
-        "name": "Copper Leggings",
-        "chance": 10,
-        "value": 10,
-        "icon": "/imgs/gear/copper_leggings.png",
-        "description": "A simple pair of copper leggings. They're not very protective, but they'll keep your legs warm.",
-        "type": "leggings",
-        "stats": {},
-        "durability": 10
+      "name": "Copper Leggings",
+      "chance": 10,
+      "value": 10,
+      "icon": "gear:copper_leggings",
+      "description": "A simple pair of copper leggings. They're not very protective, but they'll keep your legs warm.",
+      "type": "leggings",
+      "stats": {},
+      "durability": 10
     },
     "Copper Boots": {
-        "name": "Copper Boots",
-        "chance": 10,
-        "value": 10,
-        "icon": "/imgs/gear/copper_boots.png",
-        "description": "A simple pair of copper boots. They're not very protective, but they'll keep your feet warm.",
-        "type": "boots",
-        "stats": {},
-        "durability": 10
+      "name": "Copper Boots",
+      "chance": 10,
+      "value": 10,
+      "icon": "gear:copper_boots",
+      "description": "A simple pair of copper boots. They're not very protective, but they'll keep your feet warm.",
+      "type": "boots",
+      "stats": {},
+      "durability": 10
     },
     "Copper Sword": {
-        "name": "Copper Sword",
-        "chance": 10,
-        "value": 10,
-        "icon": "/imgs/gear/copper_sword.png",
-        "description": "A simple copper sword. It's not very sharp, but it'll do the job.",
-        "type": "sword",
-        "stats": {},
-        "durability": 10
+      "name": "Copper Sword",
+      "chance": 10,
+      "value": 10,
+      "icon": "gear:copper_sword",
+      "description": "A simple copper sword. It's not very sharp, but it'll do the job.",
+      "type": "sword",
+      "stats": {},
+      "durability": 10
     },
     "Copper Pickaxe": {
-        "name": "Copper Pickaxe",
-        "chance": 10,
-        "value": 10,
-        "icon": "/imgs/gear/copper_pickaxe.png",
-        "description": "A simple copper pickaxe. It's not very sharp, but it'll do the job.",
-        "type": "pickaxe",
-        "stats": {},
-        "durability": 10
+      "name": "Copper Pickaxe",
+      "chance": 10,
+      "value": 10,
+      "icon": "gear:copper_pickaxe",
+      "description": "A simple copper pickaxe. It's not very sharp, but it'll do the job.",
+      "type": "pickaxe",
+      "stats": {},
+      "durability": 10
     },
     "Copper Axe": {
-        "name": "Copper Axe",
-        "chance": 10,
-        "value": 10,
-        "icon": "/imgs/gear/copper_axe.png",
-        "description": "A simple copper axe. It's not very sharp, but it'll do the job.",
-        "type": "axe",
-        "stats": {},
-        "durability": 10
-    },
-}
+      "name": "Copper Axe",
+      "chance": 10,
+      "value": 10,
+      "icon": "gear:copper_axe",
+      "description": "A simple copper axe. It's not very sharp, but it'll do the job.",
+      "type": "axe",
+      "stats": {},
+      "durability": 10
+    }
+  }
 
 /**
  * Returns the gear object that matches the specified name, regardless of case.

@@ -5,7 +5,7 @@
     <input type="text" v-model="filter" />
     <ul>
       <li v-for="(item, index) in getFilteredInventory" :key="index">
-        <img :src="item.icon" /> {{ item.name }}: {{ item.amount }}
+        <img :src="$getImageFromIconCode(item.icon)" /> {{ item.name }}: {{ item.amount }}
         <button @click="sell(item.name)">Sell</button>
       </li>
     </ul>

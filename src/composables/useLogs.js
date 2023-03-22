@@ -1,12 +1,11 @@
 // useLogs.js
-
 import { ref } from 'vue'
 const logs = ref([])
 
 export function useLogs() {
     function add(message) {
-        logs.value.push(message)
-    }
+        logs.value.push(message);
+      }
 
     function get(limit = 10) {
         return logs.value.slice(Math.max(logs.value.length - limit, 0))

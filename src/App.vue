@@ -36,6 +36,10 @@
       <div class="settings">
 
       </div>
+      <div class="player">
+        <h2>Player</h2>
+        <PlayerView />
+      </div>
       <div class="stats">
         <h2>Stats</h2>
         <StatsView />
@@ -67,6 +71,7 @@ import DebugView from './components/DebugView.vue'
 import MiniButtons from './components/MiniButtons.vue'
 import StatsView from './components/StatsView.vue'
 import AchievementView from './components/AchievementView.vue'
+import PlayerView from './components/PlayerView.vue'
 
 import useInventory from './composables/useInventory'
 import { useGold } from './composables/useGold'

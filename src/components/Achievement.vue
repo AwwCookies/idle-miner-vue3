@@ -1,3 +1,4 @@
+<!-- Achievement.Vue -->
 <template>
     <div class="achievement">
         <h4>{{ achievement.name }}</h4>
@@ -16,6 +17,10 @@ const props = defineProps({
 })
 </script>
 
-<style>
-
+<style scoped>
+.achievement {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
 </style>

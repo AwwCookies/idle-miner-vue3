@@ -2,7 +2,7 @@
   <main>
     <div class="modal" v-show="showModal">
       <div class="modal-content" v-show="showAchievementModal">
-        <h2>Achievement</h2>
+        <h2>Achievements 🏆</h2>
         <AchievementView />
       </div>
     </div>
@@ -20,10 +20,6 @@
       </div>
       <div class="inventory">
         <InventoryView :sell="sell" />
-      </div>
-      <div class="Achievements">
-        <h2>Achievements 🏆</h2>
-        <AchievementView />
       </div>
       <div class="talents"></div>
       <div class="mini-buttons">

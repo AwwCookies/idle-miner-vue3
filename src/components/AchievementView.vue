@@ -1,10 +1,9 @@
+<!-- AchievementView.vue -->
 <template>
   <div class="achievements">
-    <ul>
-      <li v-for="(achievement, index) in achievements.getCompleted" :key="index">
+      <template v-for="achievement in achievements.getCompleted">
         <Achievement :achievement="achievement" />
-      </li>
-    </ul>
+      </template>
   </div>
 </template>
 
@@ -13,3 +12,10 @@ import { useAchievements } from '../composables/useAchievements'
 import Achievement from '@/components/Achievement.vue'
 const achievements = useAchievements()
 </script>
+
+<style scoped>
+.achievements {
+  width: 500px;
+  min-height: 300px;
+}
+</style>

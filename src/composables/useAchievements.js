@@ -7,7 +7,7 @@ import { useGold } from './useGold';
 import { useStats } from './useStats';
 import { useLogs } from './useLogs';
 
-const { inventory } = useInventory()
+const inventory = useInventory()
 const gold = useGold()
 const { stats } = useStats()
 const logs = useLogs()

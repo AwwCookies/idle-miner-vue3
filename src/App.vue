@@ -3,11 +3,7 @@
     <div class="modal" v-show="showModal">
       <div class="modal-content" v-show="showAchievementModal">
         <h2>Achievement</h2>
-        <ul>
-          <li v-for="(achievenement, index) in achievements.getAchievementsStatus" :key="index">
-            {{ achievenement.name }}: {{ achievenement.description }} {{ achievenement.completed }}
-          </li>
-        </ul>
+        <AchievementView />
       </div>
     </div>
     <div class="debug">
@@ -72,6 +68,7 @@ import MiniButtons from './components/MiniButtons.vue'
 import StatsView from './components/StatsView.vue'
 import AchievementView from './components/AchievementView.vue'
 import PlayerView from './components/PlayerView.vue'
+import Modal from './components/Modal.vue'
 
 import useInventory from './composables/useInventory'
 import { useGold } from './composables/useGold'
@@ -172,6 +169,14 @@ ul {
   justify-content: center;
   align-items: center;
   z-index: 1;
+}
+
+.modal-content {
+  background-color: #333333;
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 /* debug */

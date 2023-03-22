@@ -62,7 +62,7 @@ export const items = {
       type: 'gem',
       chance: 10,
       value: 5,
-      icon: 'gems:onyx',
+      icon: 'gem:onyx',
       description: "A small, black gemstone. It's not very valuable, but it looks nice."
     },
     amethyst: {
@@ -70,7 +70,7 @@ export const items = {
       type: 'gem',
       chance: 5,
       value: 15,
-      icon: 'gems:amethyst',
+      icon: 'gem:amethyst',
       description: "A beautiful purple gemstone. This one's worth a decent amount."
     },
     topaz: {
@@ -78,7 +78,7 @@ export const items = {
       type: 'gem',
       chance: 5,
       value: 15,
-      icon: 'gems:topaz',
+      icon: 'gem:topaz',
       description: 'A bright yellow gemstone. It might not be as valuable as some of the others, but it sure is pretty.'
     },
     diamond: {
@@ -86,7 +86,7 @@ export const items = {
       type: 'gem',
       chance: 5,
       value: 100,
-      icon: 'gems:diamond',
+      icon: 'gem:diamond',
       description: "A sparkling diamond. This is the real deal, and it's worth a small fortune."
     },
     ruby: {
@@ -94,7 +94,7 @@ export const items = {
       type: 'gem',
       chance: 3,
       value: 150,
-      icon: 'gems:ruby',
+      icon: 'gem:ruby',
       description: "A deep red gemstone. This one's worth a lot, and it's sure to catch someone's eye."
     },
     emerald: {
@@ -102,7 +102,7 @@ export const items = {
       type: 'gem',
       chance: 3,
       value: 150,
-      icon: 'gems:emerald',
+      icon: 'gem:emerald',
       description: "A bright green gemstone. This one's worth a pretty penny."
     },
     sapphire: {
@@ -110,7 +110,7 @@ export const items = {
       type: 'gem',
       chance: 3,
       value: 150,
-      icon: 'gems:sapphire',
+      icon: 'gem:sapphire',
       description: "A bright blue gemstone. This one's worth a decent amount."
     },
     platinum: {
@@ -126,7 +126,7 @@ export const items = {
       type: 'gem',
       chance: 5,
       value: 50,
-      icon: 'gems:aquamarine',
+      icon: 'gem:aquamarine',
       description: "A pale blue gemstone. This one's worth a fair amount."
     },
     garnet: {
@@ -134,7 +134,7 @@ export const items = {
       type: 'gem',
       chance: 3,
       value: 100,
-      icon: 'gems:garnet',
+      icon: 'gem:garnet',
       description: "A deep red gemstone. This one's worth a good amount."
     },
     morganite: {
@@ -142,7 +142,7 @@ export const items = {
       type: 'gem',
       chance: 3,
       value: 100,
-      icon: 'gems:morganite',
+      icon: 'gem:morganite',
       description: "A pinkish gemstone. This one's worth a good amount."
     },
     geode: {
@@ -186,6 +186,68 @@ export function getItemByName(name) {
     }
     return item;
 }
+
+/**
+ * Returns an array of item objects that match the specified type, regardless of case.
+ * @param {string} type - The type of the items to look up.
+ * @returns {ItemObject[]} - An array of item objects that match the specified type, or an empty array if no matches are found.
+ */
+export function getItemsByType(type) {
+    const matchingItems = Object.values(items).filter(
+        item => item.type.toLowerCase().replace(/ |-/g, '_') === type.toLowerCase().replace(/ |-/g, '_')
+    );
+    return matchingItems;
+}
+
+/**
+ * Returns an array of item objects that match the specified names, regardless of case.
+ * @param {string[]} names - An array of names of the items to look up.
+ * @returns {ItemObject[]} - An array of item objects that match the specified names.
+ * @throws {Error} - If no items with the specified names are found.
+ */
+export function getItemsByName(names) {
+    const items = []
+    names.forEach((name) => {
+        const item = getItemByName(name);
+        if (!item) {
+            throw new Error(`Item '${name}' not found.`);
+        }
+        items.push(item);
+    });
+    return items;
+}
+
+/**
+ * Applies the specified modifiers to the item object and returns a new item object with the modifiers applied.
+ * @param {ItemObject} item - The item object to apply the modifiers to.
+ * @param {object} modifiers - An object containing the modifiers to apply to the item.
+ * @returns {ItemObject} - The modified item object.
+ */
+function applyModifiers(item, modifiers) {
+    const modifiedItem = { ...item };
+    if (modifiers.value) {
+        modifiedItem.value += modifiers.value;
+    }
+    // Add more modifier logic here for other properties as needed.
+    return modifiedItem;
+}
+
+/**
+ * Removes the specified modifiers from the item object and returns a new item object with the modifiers removed.
+ * @param {ItemObject} item - The item object to remove the modifiers from.
+ * @param {object} modifiers - An object containing the modifiers to remove from the item.
+ * @returns {ItemObject} - The modified item object.
+ */
+function removeModifiers(item, modifiers) {
+    const modifiedItem = { ...item };
+    if (modifiers.value) {
+        modifiedItem.value -= modifiers.value;
+    }
+    // Add more modifier logic here for other properties as needed.
+    return modifiedItem;
+}
+
+
 
 
 

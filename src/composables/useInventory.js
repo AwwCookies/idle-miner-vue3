@@ -46,6 +46,30 @@ export default function useInventory() {
     return inventory.value
   }
 
+  /**
+   * Returns an array of all items in the inventory that match the specified type, regardless of case.
+   * @param {string} type - The type of item to filter by.
+   * @returns {ItemObject[]} - An array of item objects that match the specified type.
+   */
+  function getAllOfType(type) {
+    return inventory.value.filter((item) => item.type.toLowerCase() === type.toLowerCase())
+  }
+
+  /**
+   * Returns the total number of items in the inventory that match the specified type, regardless of case.
+   * @param {string} type - The type of item to filter by.
+   * @returns {number} - The total number of items that match the specified type.
+   */
+  function getTotalOfType(type) {
+    // Filter the inventory to get all items with a matching type
+    const itemsOfType = inventory.value.filter((item) => item.type.toLowerCase() === type.toLowerCase())
+
+    // Sum up the amount property of each item in the filtered array
+    return itemsOfType.reduce((total, item) => total + item.amount, 0)
+  }
+
+
+
   const getInventory = computed(() => {
     return inventory.value
   })
@@ -64,5 +88,7 @@ export default function useInventory() {
     filter,
     getFilteredInventory,
     getInventory,
+    getAllOfType,
+    getTotalOfType,
   }
 }
